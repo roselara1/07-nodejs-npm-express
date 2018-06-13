@@ -4,8 +4,20 @@
 //Why are files in the public directory and how does ExpressJS serve local files?
 //The public directory acts as a server directory. It receives the requests from ExpressJS and processes it. Then ExpressJS returns the information provided by the static file directory to the user.
 const express = require('express');
+//Instantiate Express dependency
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Serve public directory
+app.use(express.static('./public'));
+
+// Tell express to listen
+app.listen(PORT, () => console.log(`Yo bro! Server is listening on port ${PORT}`));
+
+//This route serves new.html to the user browser
+app.get('/new', (request, response) => {
+  console.log('Linked to new.html!');
+  response.sendFile('public/new.html', {root: '.'});
 
 // REVIEW: POST route needs to parse the body passed in with the request.
 // POST middleware 
