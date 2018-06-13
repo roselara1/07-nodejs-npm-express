@@ -87,17 +87,34 @@ _Your README.md must include:_
 ```md
 # Project Name
 
-**Author**: Your Name Goes Here
+**Author**: Rosie Olaivar & Brandon Fenty
 **Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
 
+Create a blog that interfaces with a back end server to pull a raw data object and render it as articles for the blog.
+
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
+** To build server **
+
+1. Initialize the file as an NPM project
+2. Install ExpressJS 
+3. Instantiate ExpressJS
+4. Create a route and callback to serve your main HTML page
+5. Create a 404 route to handle invalid requests.
+
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+- JQuery
+- Javascript
+- Handlebars JS
+- Node.js
+- Express
+
 
 ## Change Log
 <!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
@@ -106,5 +123,6 @@ _Your README.md must include:_
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+--> http://expressjs.com/en/starter/installing.html
+--> Koko Kassa
 ```
