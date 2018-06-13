@@ -1,12 +1,14 @@
 'use strict';
 
-//TODO: Finish out the server code according to the instructions in the lab README
-
+//DONE-TODO: Finish out the server code according to the instructions in the lab README
+//Why are files in the public directory and how does ExpressJS serve local files?
+//The public directory acts as a server directory. It receives the requests from ExpressJS and processes it. Then ExpressJS returns the information provided by the static file directory to the user.
 const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 // REVIEW: POST route needs to parse the body passed in with the request.
-// POST middleware
+// POST middleware 
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/articles', (request, response) => {
@@ -14,3 +16,10 @@ app.post('/articles', (request, response) => {
   console.log(request.body);
   response.status(201).json(request.body);
 })
+
+//Provide 404 status and 404.html for 
+app.use((request, response, next) => {
+  console.log('404');
+  response.status(404).sendFile('404.html', {root: './public'});
+
+});
