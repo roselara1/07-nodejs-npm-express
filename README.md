@@ -87,7 +87,7 @@ _Your README.md must include:_
 ```md
 # Project Name
 
-**Author**: Rosie  & Brandon Fenty
+**Author**: Rosie Olaivar & Brandon Fenty
 **Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
