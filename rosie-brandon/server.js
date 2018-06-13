@@ -6,7 +6,7 @@
 const express = require('express');
 //Instantiate Express dependency
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Serve public directory
 app.use(express.static('./public'));
@@ -18,6 +18,7 @@ app.listen(PORT, () => console.log(`Yo bro! Server is listening on port ${PORT}`
 app.get('/new', (request, response) => {
   console.log('Linked to new.html!');
   response.sendFile('public/new.html', {root: '.'});
+});
 
 // REVIEW: POST route needs to parse the body passed in with the request.
 // POST middleware 
@@ -27,11 +28,10 @@ app.post('/articles', (request, response) => {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
   console.log(request.body);
   response.status(201).json(request.body);
-})
+});
 
 //Provide 404 status and 404.html for 
 app.use((request, response, next) => {
   console.log('404');
-  response.status(404).sendFile('404.html', {root: './public'});
-
+  response.status(404).sendFile('404.html', { root: './public' });
 });
